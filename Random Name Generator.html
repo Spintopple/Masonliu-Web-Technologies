@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>Mason's Random Name Generator</title>
+        
+    </head>
+    <script type="text/javascript">
+
+            var MaleName = ["Jason", "Michael", "Noah", "Liam", "Benjamin"];
+            var FemaleName = ["Emma", "Olivia", "Ava", "Isabelle", "Mia"];
+            var LastName = ["Taylor", "Bachleor", "Alexander", "Conway", "Liu"];
+           
+            var thelastname = 0;
+            var thefirstname = 0;
+
+            function RandomName() 
+            {
+                var nameform = document.querySelector('#nameForm');
+                console.log(nameform);
+                thelastname = Math.random() * LastName.length;  
+
+                if(nameform.gender.options[1].selected == true) 
+                    {
+                        thefirstname = Math.random() * FemaleName.length;
+                        nameform.first.value=FemaleName[thefirstname] 
+                        nameform.last.value=LastName[thelastname]
+                    }
+
+                else 
+                { 
+                    thefirstname = Math.random() * MaleName.length;
+                    nameform.first.value=MaleName[thefirstname] 
+                    nameform.last.value=LastName[thelastname]   
+                }
+            
+            }
+    </script>
+        <body>
+            <h1>Random Name Generator</h1>
+             <form id="nameForm">
+                <select name=gender size=2>
+                 <option value="male">Male</option>
+                 <option value="female">Female</option>
+                </select>  
+                <input type=button name=generate value="Make A New Name!" onClick="RandomName()">
+                    <u>First Name:</u> <input type=text name=first size=15>
+                    <u>Last Name:</u> <input type=text name=last size=15>
+            </form>
+
+    </body>
+</html>
