@@ -20,14 +20,14 @@
 
                 if(nameform.gender.options[1].selected == true) 
                     {
-                        thefirstname = Math.random() * FemaleName.length;
+                        thefirstname = Math.floor(Math.random() * FemaleName.length);
                         nameform.first.value=FemaleName[thefirstname] 
                         nameform.last.value=LastName[thelastname]
                     }
 
                 else 
                 { 
-                    thefirstname = Math.random() * MaleName.length;
+                    thefirstname = Math.floor(Math.random() * MaleName.length);
                     nameform.first.value=MaleName[thefirstname] 
                     nameform.last.value=LastName[thelastname]   
                 }
