@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <title>The Library</title>
+
+</head>
+<script type="text/javascript">
+    class Library {
+
+        Libary() {
+            this.items = [];
+        }
+
+
+        add() {
+            var frm = document.querySelector('#libraryForm'); //library form
+            var item = this.buildItem(frmItem);
+            this.items.push(item);
+            console.log(items);
+            return false;
+        }
+
+        builditem(frm) {
+            console.log(frm);
+            var itemTypes = frm.querySelector('#sellItemType').selectedOptions;
+            return {'itemType' : frm.itemType.value, 'title':frm.title.value};
+        }
+
+        render(elementId) {
+
+        }
+        renderItem(item) {
+
+        }
+    }
+    var billsLibrary = new Library();
+</script>
+
+<body>
+    <h1>Our Library</h1>
+    <form id="billsLibrary">
+        <label for='sellItemType'>Item Type</label>
+        <select name='ItemType' id='sellItemType'>
+            <option value='book'>Book</option>
+            <option value='movie'>Movie</option>
+            <option value='game'>Game</option>
+        </select>
+        <label for='txtTitle'>Title</label>
+        <input type='text' name='title' id='txttitle'>
+
+        <input type='submit' name='btnAdd' value='Add' onClick='return billsLibrary.add()'>
+    </form>
+</body>
